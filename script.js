@@ -39,5 +39,5 @@ squares.forEach(square => {
 gridSizeButton = document.querySelector('#grid-size');
 gridSizeButton.addEventListener('click', () => {
     size = prompt('Enter new grid square size:');
-    console.log(size);
+    generateGrid(size);
 })
