@@ -1,21 +1,25 @@
 container = document.querySelector('#grid-container');
 
-function generateGrid() {
-    for (let i = 1; i <= 16; i++) {
+function generateGrid(gridSize) {
+    squareSize = container.clientWidth / gridSize;
+    console.log(squareSize);
+
+    for (let i = 1; i <= gridSize; i++) {
         rowContainer = document.createElement('div');
         rowContainer.style.display = 'flex';
         container.appendChild(rowContainer);
     
-        for (let j = 1; j <= 16; j++) {
+        for (let j = 1; j <= gridSize; j++) {
             div = document.createElement('div');
-            div.style.cssText = 'width: 32px; height: 32px';
+            div.style.height = squareSize + 'px';
+            div.style.width = squareSize + 'px';
             div.classList.add('square');
             rowContainer.appendChild(div);
         }
     }
 }
 
-generateGrid();
+generateGrid(10);
 
 squares = document.querySelectorAll('.square');
 squares.forEach(square => {
