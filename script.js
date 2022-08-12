@@ -28,7 +28,7 @@ function generateGrid(gridSize) {
     })
 }
 
-generateGrid(10);
+generateGrid(30);
 
 function clearGrid() {
     while(container.firstChild) {
@@ -38,6 +38,9 @@ function clearGrid() {
 
 gridSizeButton = document.querySelector('#grid-size');
 gridSizeButton.addEventListener('click', () => {
-    size = prompt('Enter new grid square size:');
+    let size = 0;
+    do {
+        size = prompt('Enter new grid square size:');
+    } while (size > 100 || size < 1 || isNaN(size));
     generateGrid(size);
 })
