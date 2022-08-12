@@ -7,6 +7,14 @@ for (let i = 1; i <= 16; i++) {
     for (let j = 1; j <= 16; j++) {
         div = document.createElement('div');
         div.style.cssText = 'width: 32px; height: 32px; display: inline-block';
+        div.classList.add('square');
         rowContainer.appendChild(div);
     }
 }
+
+squares = document.querySelectorAll('.square');
+squares.forEach(square => {
+    square.addEventListener('mouseover', () => {
+        square.style.backgroundColor = 'black';
+    })
+})
