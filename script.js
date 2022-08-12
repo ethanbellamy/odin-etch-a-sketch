@@ -4,7 +4,6 @@ function generateGrid(gridSize) {
     clearGrid();
 
     squareSize = container.clientWidth / gridSize;
-    console.log(squareSize);
 
     for (let i = 1; i <= gridSize; i++) {
         rowContainer = document.createElement('div');
