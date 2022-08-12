@@ -15,9 +15,17 @@ function generateGrid() {
     }
 }
 
+generateGrid();
+
 squares = document.querySelectorAll('.square');
 squares.forEach(square => {
     square.addEventListener('mouseover', () => {
         square.style.backgroundColor = 'black';
     })
+})
+
+gridSizeButton = document.querySelector('#grid-size');
+gridSizeButton.addEventListener('click', () => {
+    size = prompt('Enter new grid square size:');
+    console.log(size);
 })
