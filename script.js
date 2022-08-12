@@ -22,7 +22,20 @@ function generateGrid(gridSize) {
     squares = document.querySelectorAll('.square');
     squares.forEach(square => {
         square.addEventListener('mouseover', () => {
-            square.style.backgroundColor = 'black';
+            if (document.querySelector('#draw-black').checked) {
+                square.style.backgroundColor = 'black';
+            }
+
+            else if (document.querySelector('#draw-rainbow').checked) {
+                rgb = [];
+
+                for (let i = 1; i <=3; i++) {
+                    num = Math.floor(Math.random() * 255);
+                    rgb.push(num);
+                }
+
+                square.style.backgroundColor = `rgb(${rgb.join()})`;
+            }
         })
     })
 }
