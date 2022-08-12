@@ -13,3 +13,11 @@
 .fill {
     background-color: black;
 }
+
+form p {
+    margin-bottom: 0;
+}
+
+form {
+    margin-bottom: 20px;
+}
