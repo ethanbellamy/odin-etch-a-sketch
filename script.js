@@ -19,6 +19,13 @@ function generateGrid(gridSize) {
             rowContainer.appendChild(div);
         }
     }
+
+    squares = document.querySelectorAll('.square');
+    squares.forEach(square => {
+        square.addEventListener('mouseover', () => {
+            square.style.backgroundColor = 'black';
+        })
+    })
 }
 
 generateGrid(10);
@@ -28,13 +35,6 @@ function clearGrid() {
         container.removeChild(container.firstChild);
     }
 }
-
-squares = document.querySelectorAll('.square');
-squares.forEach(square => {
-    square.addEventListener('mouseover', () => {
-        square.style.backgroundColor = 'black';
-    })
-})
 
 gridSizeButton = document.querySelector('#grid-size');
 gridSizeButton.addEventListener('click', () => {
