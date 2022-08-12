@@ -23,7 +23,7 @@ function generateGrid(gridSize) {
     squares = document.querySelectorAll('.square');
     squares.forEach(square => {
         square.addEventListener('mouseover', () => {
-            square.style.backgroundColor = 'black';
+            square.classList.add('fill');
         })
     })
 }
