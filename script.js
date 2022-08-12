@@ -1,6 +1,8 @@
 container = document.querySelector('#grid-container');
 
 function generateGrid(gridSize) {
+    clearGrid();
+
     squareSize = container.clientWidth / gridSize;
     console.log(squareSize);
 
@@ -20,6 +22,12 @@ function generateGrid(gridSize) {
 }
 
 generateGrid(10);
+
+function clearGrid() {
+    while(container.firstChild) {
+        container.removeChild(container.firstChild);
+    }
+}
 
 squares = document.querySelectorAll('.square');
 squares.forEach(square => {
