@@ -1,7 +1,9 @@
 container = document.querySelector('#grid-container');
+currentGridSize = 0;
 
 function generateGrid(gridSize) {
     clearGrid();
+    currentGridSize = gridSize;
 
     squareSize = container.clientWidth / gridSize;
 
@@ -70,3 +72,8 @@ gridSizeButton.addEventListener('click', () => {
     } while (size > 100 || size < 1 || isNaN(size));
     generateGrid(size);
 })
+
+eraseGridButton = document.querySelector('#erase-grid');
+eraseGridButton.addEventListener('click', () => {
+    generateGrid(currentGridSize);
+});

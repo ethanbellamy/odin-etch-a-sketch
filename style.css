@@ -15,7 +15,7 @@ h1 {
     justify-content: center;
 }
 
-#grid-size {
+button {
     display: block;
     margin-bottom: 20px;
     border: 1px solid black;
