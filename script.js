@@ -23,7 +23,7 @@ function generateGrid(gridSize) {
     squares.forEach(square => {
         square.addEventListener('mouseover', () => {
             if (document.querySelector('#draw-black').checked) {
-                square.style.backgroundColor = 'black';
+                square.style.backgroundColor = 'rgb(0,0,0)';
             }
 
             else if (document.querySelector('#draw-rainbow').checked) {
@@ -34,6 +34,20 @@ function generateGrid(gridSize) {
                     rgb.push(num);
                 }
 
+                square.style.backgroundColor = `rgb(${rgb.join()})`;
+            }
+
+            else if (document.querySelector('#draw-fade').checked) {
+                if(!square.style.backgroundColor) {
+                    rgb = [255,255,255];
+                }
+
+                else {
+                    colour = square.style.backgroundColor.slice(4,-1);
+                    rgb = colour.split(',').map(Number);
+                }
+
+                rgb = rgb.map(a => a-25);
                 square.style.backgroundColor = `rgb(${rgb.join()})`;
             }
         })
