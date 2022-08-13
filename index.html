@@ -5,20 +5,27 @@
         <title>Etch-a-Sketch</title>
         <link rel="stylesheet" href="style.css">
         <script src="script.js" defer></script>
+        <link href="https://fonts.googleapis.com/css2?family=DynaPuff&display=swap" rel="stylesheet">
     </head>
     <body>
-        <button id="grid-size">Change Grid Size</button>
+        <h1>Etch-a-Sketch</h1>
 
-        <form>
-            <p>Draw Type:</p>
-            <input type="radio" id="draw-black" name="draw-type" checked>
-            <label for="draw-black">Black</label>
-            <input type="radio" id="draw-rainbow" name="draw-type">
-            <label for="draw-rainbow">Rainbow</label>
-            <input type="radio" id="draw-fade" name="draw-type">
-            <label for="draw-fade">Fade</label>
-        </form>
+        <div id="parent-container">
+            <div id ="grid-container"></div>
 
-        <div id ="grid-container"></div>
+            <div id="options-container">
+                <button id="grid-size">Change Grid Size</button>
+
+                <form>
+                    <p>Draw Type:</p>
+                    <input type="radio" id="draw-black" name="draw-type" checked>
+                    <label for="draw-black">Black</label>
+                    <input type="radio" id="draw-rainbow" name="draw-type">
+                    <label for="draw-rainbow">Rainbow</label>
+                    <input type="radio" id="draw-fade" name="draw-type">
+                    <label for="draw-fade">Fade</label>
+                </form>
+            </div>
+        </div>
     </body>
 </html>

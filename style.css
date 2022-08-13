@@ -1,6 +1,28 @@
+body {
+    background-color: rgb(248, 240, 227);
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    font-size: 65px;
+    text-align: center;
+    font-family: 'DynaPuff', cursive;
+}
+
+#parent-container {
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+}
+
 #grid-size {
     display: block;
     margin-bottom: 20px;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 20px;
+    width: 200px;
 }
 
 #grid-container {
@@ -8,12 +30,22 @@
     display: inline-block;
     width: 500px;
     height: 500px;
+    background-color: rgb(255,255,255);
+    text-align: center;
 }
 
-form p {
-    margin-bottom: 0;
+#options-container {
+    font-size: 20px;
+}
+
+#options-container * {
+    margin-bottom: 30px;
 }
 
 form {
     margin-bottom: 20px;
+}
+
+form p {
+    margin-bottom: 0;
 }
