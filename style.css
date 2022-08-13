@@ -25,6 +25,12 @@ button {
     width: 200px;
 }
 
+p {
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
 button.selected {
     border: 3px solid black;
 }
@@ -42,5 +48,10 @@ button.selected {
     font-size: 20px;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    justify-content: space-around;
+}
+
+input {
+    width: 200px;
+    outline: black;
 }

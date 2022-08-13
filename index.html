@@ -14,13 +14,16 @@
             <div id ="grid-container"></div>
 
             <div id="options-container">
-                <button id="grid-size">Change Grid Size</button>
-                <button id="erase-grid">Erase</button>
-
                 <div id="pen-options">
                     <button id="draw-black" class="selected">Black Pen</button>
                     <button id="draw-rainbow">Rainbow Pen</button>
                     <button id="draw-fade">Fade Pen</button>
+                </div>
+
+                <div id="grid-options">
+                    <button id="erase-grid">Erase Board</button>
+                    <p id="grid-size-label">Grid Size: 30 x 30</p>
+                    <input type="range" min="1" max="100" value="30" id="grid-size">
                 </div>
             </div>
         </div>

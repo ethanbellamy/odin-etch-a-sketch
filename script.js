@@ -4,6 +4,7 @@ penColour = 'black';
 
 function generateGrid(gridSize) {
     clearGrid();
+
     currentGridSize = gridSize;
 
     squareSize = container.clientWidth / gridSize;
@@ -65,14 +66,19 @@ function clearGrid() {
     }
 }
 
-gridSizeButton = document.querySelector('#grid-size');
-gridSizeButton.addEventListener('click', () => {
-    let size = 0;
-    do {
-        size = prompt('Enter new grid square size:');
-    } while (size > 100 || size < 1 || isNaN(size));
+gridSizeLabel = document.querySelector('#grid-size-label');
+gridSizeSlider = document.querySelector('#grid-size');
+
+gridSizeSlider.addEventListener('input', () => {
+    size = gridSizeSlider.value;
+    gridSizeLabel.textContent = `Grid Size: ${size} x ${size}`;
+})
+
+gridSizeSlider.addEventListener('change', () => {
+    size = gridSizeSlider.value;
     generateGrid(size);
 })
+
 
 eraseGridButton = document.querySelector('#erase-grid');
 eraseGridButton.addEventListener('click', () => {
