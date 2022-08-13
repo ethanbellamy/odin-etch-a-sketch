@@ -1,5 +1,6 @@
 container = document.querySelector('#grid-container');
 currentGridSize = 0;
+penColour = 'black';
 
 function generateGrid(gridSize) {
     clearGrid();
@@ -24,11 +25,11 @@ function generateGrid(gridSize) {
     squares = document.querySelectorAll('.square');
     squares.forEach(square => {
         square.addEventListener('mouseover', () => {
-            if (document.querySelector('#draw-black').checked) {
+            if (penColour == 'black') {
                 square.style.backgroundColor = 'rgb(0,0,0)';
             }
 
-            else if (document.querySelector('#draw-rainbow').checked) {
+            else if (penColour == 'rainbow') {
                 rgb = [];
 
                 for (let i = 1; i <=3; i++) {
@@ -39,7 +40,7 @@ function generateGrid(gridSize) {
                 square.style.backgroundColor = `rgb(${rgb.join()})`;
             }
 
-            else if (document.querySelector('#draw-fade').checked) {
+            else if (penColour == 'fade') {
                 if(!square.style.backgroundColor) {
                     rgb = [255,255,255];
                 }
@@ -77,3 +78,31 @@ eraseGridButton = document.querySelector('#erase-grid');
 eraseGridButton.addEventListener('click', () => {
     generateGrid(currentGridSize);
 });
+
+drawType = document.querySelector('#pen-options');
+blackPen = document.querySelector('#draw-black');
+rainbowPen = document.querySelector('#draw-rainbow');
+fadePen = document.querySelector('#draw-fade');
+
+drawType.addEventListener('click', (e) => {
+    if (e.target.id == 'draw-black') {
+        blackPen.classList.add('selected');
+        rainbowPen.classList.remove('selected');
+        fadePen.classList.remove('selected');
+        penColour = 'black';
+    }
+
+    else if (e.target.id == 'draw-rainbow') {
+        blackPen.classList.remove('selected');
+        rainbowPen.classList.add('selected');
+        fadePen.classList.remove('selected');
+        penColour = 'rainbow';
+    }
+
+    else if (e.target.id == 'draw-fade') {
+        blackPen.classList.remove('selected');
+        rainbowPen.classList.remove('selected');
+        fadePen.classList.add('selected');
+        penColour = 'fade';
+    }
+})
